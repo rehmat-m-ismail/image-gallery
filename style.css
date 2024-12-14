@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+
+
+.search {
+    width: 100%;
+    position: relative;
+    height: fit-content;
+}
+
+.search img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+.search-content {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    color: white;
+    height: fit-content;
+    text-align: center;
+}
+
+.search-content h1 {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.search-content p {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.input-sec {
+    min-width: 50%;
+    position: absolute;
+    top: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.input-sec i {
+    background-color: rgb(241, 241, 241);
+    padding: 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.input-sec input {
+    height: 4rem;
+    width: 50%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    outline: none;
+    border: none;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .search-content h1 {
+        font-size: 3rem; /* Reduce heading size for smaller screens */
+    }
+
+    .search-content p {
+        font-size: 1.2rem; /* Reduce paragraph size */
+        margin-top: 1rem;
+    }
+
+    .input-sec {
+        min-width: 70%; /* Make the input box wider on smaller screens */
+        top: 60%;
+    }
+
+    .input-sec i {
+        font-size: 1.2rem; /* Adjust icon size */
+    }
+
+    .input-sec input {
+        width: 70%; /* Increase input width on smaller screens */
+        font-size: 1.1rem; /* Adjust input text size */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-content h1 {
+        font-size: 2.5rem; /* Further reduce heading size */
+    }
+
+    .search-content p {
+        font-size: 1rem; /* Further reduce paragraph size */
+        margin-top: 1rem;
+    }
+
+    .input-sec {
+        min-width: 80%; /* Make the input box even wider on very small screens */
+        top: 55%;
+    }
+
+    .input-sec i {
+        font-size: 1rem; /* Adjust icon size */
+        padding: 0.8rem; /* Reduce padding */
+    }
+
+    .input-sec input {
+        width: 80%; /* Make input fill more of the screen */
+        font-size: 1rem; /* Adjust input text size */
+    }
+}
+.images {
+    margin-top: 2rem;
+    padding: 1rem;
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.images-ul {
+    columns: 3 340px;
+    gap: 15px;
+}
+
+.images-ul img {
+    width: 100%;
+}
+
+.card {
+    list-style: none;
+    margin-bottom: 14px;
+}
+
+.images li {
+    list-style: none;
+    margin-top: 10px;
+}
+.card{
+    transition: all 0.3s ease-in-out ;
+}
+
+.card:hover{
+    filter: saturate(2);
+    opacity: .5;
+}
+
+.btn {
+    padding: 10px 1.5rem;
+    font-size: 1.5rem;
+    background-color: orchid;
+    border-radius: 10px;
+    border: transparent;
+    text-align: center;
+}
+.disable{
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.lightbox {
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+}
+.lightbox.show{
+    display: block;
+}
+
+.lightbox .warpper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.warpper .preview-img .img {
+    max-height: 65vh;
+    max-width: 90vh;
+    overflow: hidden;
+}
+.warpper i{
+    font-size: 1.5rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.preview-img {
+    display: flex;
+    justify-content: center;
+
+}
+
+.preview-img .img img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
